@@ -13,23 +13,23 @@ header{
 }
 
 #slices li{
-
     list-style: none;
     border-top-style:solid;
     border-top-width: 1px;
     height: 30px;
-    width:250px;
+    width: calc(100% - 30px);
     padding: 10px 0 0 30px;
     font-size: 16px;
     color:#4d4e53;
+    box-sizing:content-box;
 
 }
 #slices{
     padding-left: 0px;
     width:auto;
     margin-top: 0;
-    overflow: scroll;
-    height: 545px;
+    height: auto;
+    /* height: 545px; */
 }
 #slices div{
     height: auto;
@@ -38,15 +38,20 @@ header{
 #meer{
     border-right-style: solid;
     border-right-color:rgba(0, 22, 22, 0.4);
+    height: 100vh;
 }      
 header h2{   
+    display: inline-block;
     width:300px;
     margin-right: 0;
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 19.929px;
+    margin: 0;
+    padding-bottom: 19.929px;
     padding-top: 19.929px;
     color: black !important;
+    box-sizing: border-box;
+    border-bottom-style:solid;
+    border-bottom-width: 1px;
 }
 header{
     width:300px;
@@ -95,6 +100,21 @@ code{
 section{
     margin-bottom: 30px;
 }
+#last{
+    border-bottom-style:solid;border-bottom-width: 1px;
+}
+@media (max-height:646px){
+    #slices{
+        overflow-y: scroll;
+        height: calc( 100% - 77px);
+    }
+    #slices li {
+        width:250px;
+    }
+    #last{
+        border-width: 0;
+    }
+}
 @media (max-width:815px){
     header{
         position:static;
@@ -103,6 +123,7 @@ section{
         justify-content: center;
     }
     #meer{
+        height: 100%;
         width:100%;
         border-style: none;
     }
